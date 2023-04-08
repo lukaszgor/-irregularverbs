@@ -31,12 +31,12 @@ const Dictionary=()=>{
 
     const columns = [
 
-        { field: 'id', headerName: 'ID', type: 'number', width: 80 },
+        { field: 'id', headerName: 'ID', type: 'number', width: 10 },
         { field: 'infinitive', headerName: 'infinitive', width: 80 },
         { field: 'pastTense', headerName: 'past tense', width: 100 },
         { field: 'pastParticiple', headerName: 'past participle', width: 100 },
         { field: 'translation', headerName: 'translation', width: 80 },
-        { field: 'graduate', headerName: 'grade', type: 'number', width: 80 },
+        { field: 'graduate', headerName: 'grade', type: 'number', width: 60 },
       ];
 
 
