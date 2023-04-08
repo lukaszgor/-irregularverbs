@@ -9,14 +9,32 @@ const Infinitive=()=>{
     const [data,setData] =useState(null)
     const [fetchError,setFetchError] =useState(null)
 
+    const [infinitiveCheck,setinfinitiveCheck] =useState(null)
+
     const [infinitiveVariable,setinfinitiveVariable] =useState(null)
     const [pastParticipleVariable,setPastParticipleVariable] =useState(null)
     const [pastTenseVariable,setPastTenseVariable] =useState(null)
     const [translationVariable,setTranslationVariable] =useState(null)
 
 
+
+const checkInfinitive = async()=>{
+if(infinitiveVariable === infinitiveCheck){
+    console.log('ok')
+}else{
+    console.log('zle')
+}
+
+}
+
+
+
+
 let graduate;
     const fetchData = async()=>{
+
+setinfinitiveCheck("")
+
 graduate = localStorage.getItem('graduateVariable');
 
 if(graduate == 1){
@@ -59,7 +77,6 @@ setinfinitiveVariable(data.infinitive)
 setPastParticipleVariable(data.pastParticiple)
 setPastTenseVariable(data.pastTense)
 setTranslationVariable(data.translation)
-
     }
 }
        
@@ -75,23 +92,11 @@ setTranslationVariable(data.translation)
 <TextField
           id="outlined-read-only-input"
           label="Infinitive"
-          defaultValue="Hello World"
-          value={infinitiveVariable}
-          InputProps={{
-            readOnly: true,
-          }}
+          value={infinitiveCheck}
+          onChange={(e) =>
+            setinfinitiveCheck(e.target.value)} 
         />
-         <br/>
-         <br/>
-        <TextField
-          id="outlined-read-only-input"
-          label="Past Participle"
-          defaultValue="Hello World"
-          value={pastParticipleVariable}
-          InputProps={{
-            readOnly: true,
-          }}
-        />
+       
          <br/>
          <br/>
         <TextField
@@ -99,6 +104,17 @@ setTranslationVariable(data.translation)
           label="Past Tense"
           defaultValue="Past Tense"
           value={pastTenseVariable}
+          InputProps={{
+            readOnly: true,
+          }}
+        />
+         <br/>
+         <br/>
+         <TextField
+          id="outlined-read-only-input"
+          label="Past Participle"
+          defaultValue="Hello World"
+          value={pastParticipleVariable}
           InputProps={{
             readOnly: true,
           }}
@@ -120,6 +136,9 @@ setTranslationVariable(data.translation)
 <p></p>
 <Button autoFocus onClick={fetchData}>
               Losuj
+        </Button>
+        <Button autoFocus onClick={checkInfinitive}>
+              Sprawdz
         </Button>
 
 </Box>
