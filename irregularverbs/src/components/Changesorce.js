@@ -16,13 +16,14 @@ const Changesorce=()=>{
         localStorage.setItem('graduateVariable', event.target.value);
         
     };
-  
     return(
     <div>
 <h1>Changesorce</h1>
-
-<Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+<Box sx={{ minWidth: 120,
+display: 'flex',
+justifyContent: 'center',
+}}>
+      <FormControl >
         <InputLabel id="demo-simple-select-label">grade</InputLabel>
         <Select
           labelId="demo-simple-select-label"

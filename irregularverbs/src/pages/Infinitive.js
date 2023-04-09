@@ -5,6 +5,7 @@ import Changesorce from "../components/Changesorce";
 import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import { Box } from "@mui/system";
+import { useSpeechSynthesis } from "react-speech-kit";
 const Infinitive=()=>{
     const [data,setData] =useState(null)
     const [fetchError,setFetchError] =useState(null)
@@ -15,6 +16,7 @@ const Infinitive=()=>{
     const [pastParticipleVariable,setPastParticipleVariable] =useState(null)
     const [pastTenseVariable,setPastTenseVariable] =useState(null)
     const [translationVariable,setTranslationVariable] =useState(null)
+    const { speak,voices } = useSpeechSynthesis();
 
 
 
@@ -24,11 +26,7 @@ if(infinitiveVariable === infinitiveCheck){
 }else{
     console.log('zle')
 }
-
 }
-
-
-
 
 let graduate;
     const fetchData = async()=>{
@@ -78,13 +76,17 @@ setPastParticipleVariable(data.pastParticiple)
 setPastTenseVariable(data.pastTense)
 setTranslationVariable(data.translation)
     }
-}
-       
+}   
     }
     return(
-    <div>
+    
         <Box sx={{
+          display: 'flex',
+          p: 1,
+          m: 1,
+          flexDirection: 'column',
           justifyContent: 'center',
+          alignItems: 'center', 
         }}>
 <h1>Infinitive</h1>
 <Changesorce></Changesorce>
@@ -96,9 +98,7 @@ setTranslationVariable(data.translation)
           onChange={(e) =>
             setinfinitiveCheck(e.target.value)} 
         />
-       
-         <br/>
-         <br/>
+       <br/>
         <TextField
           id="outlined-read-only-input"
           label="Past Tense"
@@ -108,7 +108,6 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
-         <br/>
          <br/>
          <TextField
           id="outlined-read-only-input"
@@ -120,7 +119,6 @@ setTranslationVariable(data.translation)
           }}
         />
          <br/>
-         <br/>
         <TextField
           id="outlined-read-only-input"
           label="Translation"
@@ -130,8 +128,7 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
-         <br/>
-         <br/>
+      
 
 <p></p>
 <Button autoFocus onClick={fetchData}>
@@ -140,10 +137,12 @@ setTranslationVariable(data.translation)
         <Button autoFocus onClick={checkInfinitive}>
               Sprawdz
         </Button>
-
+        <Button autoFocus onClick={() => speak({ text: pastParticipleVariable, voice: voices[52] })}>
+              wymowa
+        </Button>
 </Box>
 
-    </div>
+    
         
     )
 }
