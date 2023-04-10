@@ -10,9 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 const Dictionary=()=>{
-
     const [graduate, setGraduate] = useState(1);
-
     const handleChange = (event) => {
         setGraduate(event.target.value);
         fetchData();
@@ -30,7 +28,6 @@ const Dictionary=()=>{
       };
 
     const columns = [
-
         { field: 'id', headerName: 'ID', type: 'number', width: 10 },
         { field: 'infinitive', headerName: 'infinitive', width: 80 },
         { field: 'pastTense', headerName: 'past tense', width: 100 },
@@ -38,7 +35,6 @@ const Dictionary=()=>{
         { field: 'translation', headerName: 'translation', width: 80 },
         { field: 'graduate', headerName: 'grade', type: 'number', width: 60 },
       ];
-
 
       const fetchData = async()=>{
 
@@ -74,14 +70,11 @@ const Dictionary=()=>{
       useEffect(()=>{
       console.log(data)
       fetchData()
-        
       },[])
 
     return(
     <div>
 <h1>Dictionary</h1>
-<p>{graduate}</p>
-
 <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">grade</InputLabel>
@@ -100,7 +93,6 @@ const Dictionary=()=>{
         </Select>
       </FormControl>
     </Box>
-
     <Button autoFocus onClick={fetchData}>
               refresh
         </Button>
@@ -108,7 +100,6 @@ const Dictionary=()=>{
   {fetchError &&(<p>{fetchError}</p>)}
   {data &&(
   <div>
-
 <div style={{ height: 400, width: '100%' }}>
       <DataGrid
         rows={data}

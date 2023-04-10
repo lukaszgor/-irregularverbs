@@ -127,6 +127,7 @@ setTranslationVariable(data.translation)
 <TextField
           id="outlined-read-only-input"
           label="Infinitive"
+          focused
           value={infinitiveCheck}
           onChange={(e) =>
             setinfinitiveCheck(e.target.value)} 
@@ -143,7 +144,7 @@ setTranslationVariable(data.translation)
         <TextField
           id="outlined-read-only-input"
           label="Past Tense"
-          defaultValue="Past Tense"
+          focused
           value={pastTenseVariable}
           InputProps={{
             readOnly: true,
@@ -160,7 +161,7 @@ setTranslationVariable(data.translation)
          <TextField
           id="outlined-read-only-input"
           label="Past Participle"
-          defaultValue="Hello World"
+          focused
           value={pastParticipleVariable}
           InputProps={{
             readOnly: true,
@@ -177,7 +178,7 @@ setTranslationVariable(data.translation)
         <TextField
           id="outlined-read-only-input"
           label="Translation"
-          defaultValue="Translation"
+          focused
           value={translationVariable}
           InputProps={{
             readOnly: true,
