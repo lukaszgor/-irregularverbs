@@ -6,6 +6,11 @@ import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import { Box } from "@mui/system";
 import { useSpeechSynthesis } from "react-speech-kit";
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
+
+
 const Infinitive=()=>{
     const [data,setData] =useState(null)
     const [fetchError,setFetchError] =useState(null)
@@ -18,16 +23,47 @@ const Infinitive=()=>{
     const [translationVariable,setTranslationVariable] =useState(null)
     const { speak,voices } = useSpeechSynthesis();
 
-
-
+    //check valid
 const checkInfinitive = async()=>{
 if(infinitiveVariable === infinitiveCheck){
     console.log('ok')
+    handleClickAlertCorrect()
 }else{
     console.log('zle')
+    handleClickAlertInCorrect()
 }
 }
+//alert configuration
 
+// Correct
+const [openCorrect,setOpenCorrect] =useState(null)
+
+const handleClickAlertCorrect = () => {
+  setOpenCorrect(true);
+};
+
+const handleCloseAlertCorrect = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+  setOpenCorrect(false);
+};
+
+//Incorrect
+const [openInCorrect,setOpenInCorrect] =useState(null)
+
+const handleClickAlertInCorrect = () => {
+  setOpenInCorrect(true);
+};
+
+const handleCloseAlertInCorrect = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+  setOpenInCorrect(false);
+};
+
+// set graduate data
 let graduate;
     const fetchData = async()=>{
 
@@ -79,26 +115,31 @@ setTranslationVariable(data.translation)
 }   
     }
     return(
-    
-        <Box sx={{
-          display: 'flex',
-          p: 1,
-          m: 1,
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center', 
+        <Box sx={{display: 'flex',p: 1,m: 1,flexDirection: 'column',justifyContent: 'center',alignItems: 'center', 
         }}>
 <h1>Infinitive</h1>
 <Changesorce></Changesorce>
 <p></p>
+{/* Infinitive */}
+<Box sx={{
+          display: 'flex',p: 1,m: 1,flexDirection: 'row',justifyContent: 'center',alignItems: 'center', 
+        }}>
 <TextField
           id="outlined-read-only-input"
           label="Infinitive"
           value={infinitiveCheck}
           onChange={(e) =>
             setinfinitiveCheck(e.target.value)} 
-        />
-       <br/>
+  />
+   <Button  onClick={() => speak({ text: infinitiveVariable, voice: voices[52] })}>
+    <VolumeUpIcon></VolumeUpIcon>
+     </Button>
+ </Box>       
+  <br/>
+  {/* Past Tense */}
+  <Box sx={{
+          display: 'flex',p: 1,m: 1,flexDirection: 'row',justifyContent: 'center',alignItems: 'center', 
+        }}>
         <TextField
           id="outlined-read-only-input"
           label="Past Tense"
@@ -108,7 +149,14 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
-         <br/>
+        <Button  onClick={() => speak({ text: pastTenseVariable, voice: voices[52] })}>
+        <VolumeUpIcon></VolumeUpIcon>
+        </Button>
+  </Box>
+  <br/>
+  {/* Past Participle */}
+  <Box sx={{display: 'flex',p: 1,m: 1,flexDirection: 'row',justifyContent: 'center',alignItems: 'center', 
+        }}>
          <TextField
           id="outlined-read-only-input"
           label="Past Participle"
@@ -118,7 +166,14 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
-         <br/>
+        <Button  onClick={() => speak({ text: pastParticipleVariable, voice: voices[52] })}>
+        <VolumeUpIcon></VolumeUpIcon>
+        </Button>
+</Box>
+<br/>
+<Box sx={{
+          display: 'flex',p: 1,m: 1,flexDirection: 'row',justifyContent: 'center',alignItems: 'center', 
+        }}>
         <TextField
           id="outlined-read-only-input"
           label="Translation"
@@ -128,22 +183,47 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
-      
+         <Button  onClick={() => speak({ text: translationVariable })}>
+        <VolumeUpIcon></VolumeUpIcon>
+        </Button>
+</Box>
 
-<p></p>
 <Button autoFocus onClick={fetchData}>
               Losuj
         </Button>
         <Button autoFocus onClick={checkInfinitive}>
               Sprawdz
-        </Button>
-        <Button autoFocus onClick={() => speak({ text: pastParticipleVariable, voice: voices[52] })}>
-              wymowa
-        </Button>
-</Box>
+        </Button> 
 
-    
-        
+{/* <Snackbar
+        open={openCorrect}
+        autoHideDuration={2000}
+        onClose={handleCloseAlertCorrect}
+        message="Correct!"
+      /> */}
+ {/* <Snackbar 
+        open={openInCorrect}
+        autoHideDuration={2000}
+        onClose={handleCloseAlertInCorrect}
+        message="Incorrect!"
+      /> */}
+
+      <Snackbar open={openCorrect}
+        autoHideDuration={2000}
+        onClose={handleCloseAlertCorrect}>
+      <Alert severity="success">Correct!</Alert>
+      </Snackbar>
+      <Snackbar open={openInCorrect}
+        autoHideDuration={2000}
+        onClose={handleCloseAlertInCorrect}>
+      <Alert severity="error">Incorrect! Correct answer: {infinitiveVariable}</Alert>
+      </Snackbar>
+
+
+
+
+
+</Box>  
     )
 }
 export default Infinitive
