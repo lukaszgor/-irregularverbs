@@ -189,26 +189,12 @@ setTranslationVariable(data.translation)
         </Button>
 </Box>
 
-<Button autoFocus onClick={fetchData}>
-              Losuj
+<Button variant="outlined" autoFocus onClick={fetchData} sx={{m: 1 }}>
+Random verb
         </Button>
-        <Button autoFocus onClick={checkInfinitive}>
-              Sprawdz
+        <Button variant="outlined" color="success" autoFocus onClick={checkInfinitive} >
+              Check
         </Button> 
-
-{/* <Snackbar
-        open={openCorrect}
-        autoHideDuration={2000}
-        onClose={handleCloseAlertCorrect}
-        message="Correct!"
-      /> */}
- {/* <Snackbar 
-        open={openInCorrect}
-        autoHideDuration={2000}
-        onClose={handleCloseAlertInCorrect}
-        message="Incorrect!"
-      /> */}
-
       <Snackbar open={openCorrect}
         autoHideDuration={2000}
         onClose={handleCloseAlertCorrect}>
@@ -219,11 +205,6 @@ setTranslationVariable(data.translation)
         onClose={handleCloseAlertInCorrect}>
       <Alert severity="error">Incorrect! Correct answer: {infinitiveVariable}</Alert>
       </Snackbar>
-
-
-
-
-
 </Box>  
     )
 }

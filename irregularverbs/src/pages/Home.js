@@ -48,15 +48,13 @@ const Home=()=>{
                 </p>
 </Card>
 
-
-
 <TableContainer component={Paper}>
       <Table sx={{ minWidth: 80 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Rodzaj</TableCell>
-            <TableCell align="left">Opis</TableCell>
-            <TableCell align="right">Akcje</TableCell>
+            <TableCell>Type</TableCell>
+            <TableCell align="left">Description</TableCell>
+            <TableCell align="right">Action</TableCell>
           </TableRow>
         </TableHead>
 
