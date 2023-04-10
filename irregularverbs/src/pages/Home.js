@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useState,useEffect } from 'react';
 import supabase from "../supabaseClient"
-import { Card } from 'primereact/card';
 import Button from '@mui/material/Button';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -11,11 +10,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
 const Home=()=>{
 
     const navigate = useNavigate()//add to nav
-
 
     const dictionaryNavigate = () => {
         navigate('/Dictionary')
@@ -35,18 +32,12 @@ const Home=()=>{
       const GapMixNavigate = () => {
         navigate('/GapMix')
       };
-
-
-
     return(
     <div>
-
-<Card title="Title">
                 <p className="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
-                    numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+                An application for learning irregular verbs.
                 </p>
-</Card>
+
 
 <TableContainer component={Paper}>
       <Table sx={{ minWidth: 80 }} aria-label="simple table">
@@ -61,48 +52,42 @@ const Home=()=>{
         <TableBody>
         <TableRow>
             <TableCell>Dictionary</TableCell>
-            <TableCell>olor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
-                    numquam deserunt quisquam </TableCell>
+            <TableCell>The module allows you to preview the entire dictionary of irregular verbs with a breakdown of the list of verbs for specific school grades </TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={dictionaryNavigate}>Show</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Infinitive</TableCell>
-            <TableCell>olor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
-                    numquam deserunt quisquam </TableCell>
+            <TableCell>The module allows learning in the form of quziu. The student should identify the correct form based on the three forms and the translation. </TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={InfinitiveNavigate}>Exercise</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Past Tense </TableCell>
-            <TableCell>olor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
-                    numquam deserunt quisquam </TableCell>
+            <TableCell>The module allows learning in the form of quziu. The student should identify the correct form based on the three forms and the translation. </TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={PastTenseNavigate}>Exercise</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Past Participle </TableCell>
-            <TableCell>olor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
-                    numquam deserunt quisquam </TableCell>
+            <TableCell>The module allows learning in the form of quziu. The student should identify the correct form based on the three forms and the translation. </TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={PastParticipleNavigate}>Exercise</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Translation </TableCell>
-            <TableCell>olor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
-                    numquam deserunt quisquam </TableCell>
+            <TableCell>The module allows learning in the form of quziu. The student should identify the correct form based on the three forms and the translation.</TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={TranslationNavigate}>Exercise</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Gap Mix </TableCell>
-            <TableCell>olor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 
-                    numquam deserunt quisquam </TableCell>
+            <TableCell>The module allows learning in the form of quziu. The learner should indicate the correct form based on the three forms and the translation depending on the type drawn.</TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={GapMixNavigate}>Exercise</Button>
             </TableCell>
