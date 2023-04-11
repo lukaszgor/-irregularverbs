@@ -9,9 +9,27 @@ import { useSpeechSynthesis } from "react-speech-kit";
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import Speech from 'react-speech';
+
+const style = {
+  play: {
+    Button: {
+      width: '28',
+      height: '28',
+      cursor: 'pointer',
+      pointerEvents: 'none',
+      outline: 'none',
+      backgroundColor: 'yellow',
+      border: 'solid 1px rgba(255,255,255,1)',
+      borderRadius: 6
+    },
+  }
+};
+
 
 
 const Infinitive=()=>{
+
     const [data,setData] =useState(null)
     const [fetchError,setFetchError] =useState(null)
 
@@ -132,9 +150,16 @@ setTranslationVariable(data.translation)
           onChange={(e) =>
             setinfinitiveCheck(e.target.value)} 
   />
-   <Button  onClick={() => speak({ text: infinitiveVariable, voice: voices[52] })}>
-    <VolumeUpIcon></VolumeUpIcon>
-     </Button>
+        <Speech textAsButton={true}  
+            displayText="Pronunciation"   
+            text={infinitiveVariable}
+                pitch="1"
+                rate="1"
+                volume="1"
+                lang="en-GB"
+                voice="Google UK English Male">
+        </Speech>
+      
  </Box>       
   <br/>
   {/* Past Tense */}
@@ -150,9 +175,15 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
-        <Button  onClick={() => speak({ text: pastTenseVariable, voice: voices[52] })}>
-        <VolumeUpIcon></VolumeUpIcon>
-        </Button>
+        <Speech textAsButton={true}  
+            displayText="Pronunciation"   
+            text={pastTenseVariable}
+                pitch="1"
+                rate="1"
+                volume="1"
+                lang="en-GB"
+                voice="Google UK English Male">
+        </Speech>
   </Box>
   <br/>
   {/* Past Participle */}
@@ -167,9 +198,15 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
-        <Button  onClick={() => speak({ text: pastParticipleVariable, voice: voices[52] })}>
-        <VolumeUpIcon></VolumeUpIcon>
-        </Button>
+        <Speech  textAsButton={true}  
+            displayText="Pronunciation"   
+            text={pastParticipleVariable}
+                pitch="1"
+                rate="1"
+                volume="1"
+                lang="en-GB"
+                voice="Google UK English Male">
+        </Speech>
 </Box>
 <br/>
 <Box sx={{
@@ -184,9 +221,6 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
-         <Button  onClick={() => speak({ text: translationVariable })}>
-        <VolumeUpIcon></VolumeUpIcon>
-        </Button>
 </Box>
 
 <Button variant="outlined" autoFocus onClick={fetchData} sx={{m: 1 }}>
