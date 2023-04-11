@@ -128,9 +128,7 @@ setTranslationVariable(data.translation)
 <Changesorce></Changesorce>
 <p></p>
 {/* Infinitive */}
-<Box sx={{
-          display: 'flex',p: 1,m: 1,flexDirection: 'row',justifyContent: 'center',alignItems: 'center', 
-        }}>
+<Box >
 <TextField
           id="outlined-read-only-input"
           label="Infinitive"
@@ -139,6 +137,7 @@ setTranslationVariable(data.translation)
           onChange={(e) =>
             setinfinitiveCheck(e.target.value)} 
   />
+<br></br>
         <Speech textAsButton={true}  
             displayText="Pronunciation"   
             text={infinitiveVariable}
@@ -152,9 +151,7 @@ setTranslationVariable(data.translation)
  </Box>       
   <br/>
   {/* Past Tense */}
-  <Box sx={{
-          display: 'flex',p: 1,m: 1,flexDirection: 'row',justifyContent: 'center',alignItems: 'center', 
-        }}>
+  <Box>
         <TextField
           id="outlined-read-only-input"
           label="Past Tense"
@@ -164,6 +161,7 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
+        <br></br>
         <Speech textAsButton={true}  
             displayText="Pronunciation"   
             text={pastTenseVariable}
@@ -176,8 +174,7 @@ setTranslationVariable(data.translation)
   </Box>
   <br/>
   {/* Past Participle */}
-  <Box sx={{display: 'flex',p: 1,m: 1,flexDirection: 'row',justifyContent: 'center',alignItems: 'center', 
-        }}>
+  <Box>
          <TextField
           id="outlined-read-only-input"
           label="Past Participle"
@@ -187,6 +184,7 @@ setTranslationVariable(data.translation)
             readOnly: true,
           }}
         />
+        <br></br>
         <Speech  textAsButton={true}  
             displayText="Pronunciation"   
             text={pastParticipleVariable}
