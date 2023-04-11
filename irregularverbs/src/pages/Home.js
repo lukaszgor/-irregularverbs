@@ -12,6 +12,15 @@ import Paper from '@mui/material/Paper';
 
 const Home=()=>{
 
+
+  useEffect(()=>{
+    localStorage.setItem('graduateVariable', 1);
+    },[])
+
+
+
+
+
     const navigate = useNavigate()//add to nav
 
     const dictionaryNavigate = () => {
