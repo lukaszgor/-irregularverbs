@@ -11,23 +11,6 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import Speech from 'react-speech';
 
-const style = {
-  play: {
-    Button: {
-      width: '28',
-      height: '28',
-      cursor: 'pointer',
-      pointerEvents: 'none',
-      outline: 'none',
-      backgroundColor: 'yellow',
-      border: 'solid 1px rgba(255,255,255,1)',
-      borderRadius: 6
-    },
-  }
-};
-
-
-
 const Infinitive=()=>{
 
     const [data,setData] =useState(null)
@@ -40,6 +23,12 @@ const Infinitive=()=>{
     const [pastTenseVariable,setPastTenseVariable] =useState(null)
     const [translationVariable,setTranslationVariable] =useState(null)
     const { speak,voices } = useSpeechSynthesis();
+
+
+    useEffect(()=>{
+    fetchData()
+      },[])
+
 
     //check valid
 const checkInfinitive = async()=>{

@@ -23,6 +23,10 @@ const Translation=()=>{
     const [translationVariable,setTranslationVariable] =useState(null)
     const { speak,voices } = useSpeechSynthesis();
 
+    useEffect(()=>{
+      fetchData()
+        },[])
+        
     //check valid
 const checkTransaltion = async()=>{
 if(translationVariable === translationCheck){

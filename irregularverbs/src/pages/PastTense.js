@@ -23,6 +23,11 @@ const PastTense=()=>{
     const [translationVariable,setTranslationVariable] =useState(null)
     const { speak,voices } = useSpeechSynthesis();
 
+
+    useEffect(()=>{
+      fetchData()
+        },[])
+
     //check valid
 const checkPastTense = async()=>{
 if(pastTenseVariable === pastTenseCheck){

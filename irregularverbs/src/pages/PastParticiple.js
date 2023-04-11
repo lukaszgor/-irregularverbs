@@ -23,6 +23,12 @@ const PastParticiple=()=>{
     const [translationVariable,setTranslationVariable] =useState(null)
     const { speak,voices } = useSpeechSynthesis();
 
+
+    useEffect(()=>{
+      fetchData()
+        },[])
+
+
     //check valid
 const chceckPastParticiple = async()=>{
 if(pastParticipleVariable === pastParticipleCheck){
