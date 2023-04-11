@@ -68,35 +68,35 @@ const Home=()=>{
           </TableRow>
           <TableRow>
             <TableCell>Infinitive</TableCell>
-            <TableCell>The module allows learning in the form of quziu. The student should identify the correct form based on the three forms and the translation. </TableCell>
+            <TableCell>The module allows learning in the form of a quiz. The student should identify the correct form based on the three forms and the translation. </TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={InfinitiveNavigate}>Exercise</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Past Tense </TableCell>
-            <TableCell>The module allows learning in the form of quziu. The student should identify the correct form based on the three forms and the translation. </TableCell>
+            <TableCell>The module allows learning in the form of a quiz. The student should identify the correct form based on the three forms and the translation. </TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={PastTenseNavigate}>Exercise</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Past Participle </TableCell>
-            <TableCell>The module allows learning in the form of quziu. The student should identify the correct form based on the three forms and the translation. </TableCell>
+            <TableCell>The module allows learning in the form of a quiz. The student should identify the correct form based on the three forms and the translation. </TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={PastParticipleNavigate}>Exercise</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Translation </TableCell>
-            <TableCell>The module allows learning in the form of quziu. The student should identify the correct form based on the three forms and the translation.</TableCell>
+            <TableCell>The module allows learning in the form of a quzi. The student should identify the correct form based on the three forms and the translation.</TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={TranslationNavigate}>Exercise</Button>
             </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Gap Mix </TableCell>
-            <TableCell>The module allows learning in the form of quziu. The learner should indicate the correct form based on the three forms and the translation depending on the type drawn.</TableCell>
+            <TableCell>The module allows learning in the form of a quzi. The learner should indicate the correct form based on the three forms and the translation depending on the type drawn.</TableCell>
             <TableCell align="right">
             <Button variant="contained" onClick={GapMixNavigate}>Exercise</Button>
             </TableCell>
