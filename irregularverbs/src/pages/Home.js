@@ -43,11 +43,9 @@ const Home=()=>{
       };
     return(
     <div>
-                <p className="m-0">
-                An application for learning irregular verbs.
-                </p>
-
-
+<h3> An application for learning irregular verbs.</h3>
+<p></p>
+<br></br>
 <TableContainer component={Paper}>
       <Table sx={{ minWidth: 80 }} aria-label="simple table">
         <TableHead>

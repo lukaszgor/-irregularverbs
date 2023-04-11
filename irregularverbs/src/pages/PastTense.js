@@ -117,7 +117,7 @@ setTranslationVariable(data.translation)
     return(
         <Box sx={{display: 'flex',p: 1,m: 1,flexDirection: 'column',justifyContent: 'center',alignItems: 'center', 
         }}>
-<h1>Past tense</h1>
+<h2>Past Tense</h2>
 <Changesorce></Changesorce>
 <p></p>
 {/* Infinitive */}
